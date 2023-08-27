@@ -193,131 +193,147 @@ class _HomePageState extends State<HomePage> {
                             height: 48 * fem,
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Container(
-                                  height: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Container(
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 0 * fem, 6 * fem),
-                                          child: Flexible(
-                                            child: Text(
-                                              '19',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontSize: 18 * ffem,
-                                                fontWeight: FontWeight.w400,
-                                                height:
-                                                    1.2660000059 * ffem / fem,
-                                                color: Color(0xffffffff),
+                                Flexible(
+                                  child: Container(
+                                    height: double.infinity,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Container(
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 1 * fem),
+                                            child: Flexible(
+                                              child: Text(
+                                                (currentWeather?['main']
+                                                            ['temp_min'] ??
+                                                        'Loading...')
+                                                    .toString(),
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontSize: 18 * ffem,
+                                                  fontWeight: FontWeight.w400,
+                                                  height:
+                                                      1.2660000059 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Flexible(
-                                        child: Text(
-                                          'min',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        Flexible(
+                                          child: Text(
+                                            'min',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 116.5 * fem,
+                                  width: 50 * fem,
                                 ),
-                                Container(
-                                  height: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Container(
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 0 * fem, 6 * fem),
-                                          child: Flexible(
-                                            child: Text(
-                                              '19',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontSize: 18 * ffem,
-                                                fontWeight: FontWeight.w400,
-                                                height:
-                                                    1.2660000059 * ffem / fem,
-                                                color: Color(0xffffffff),
+                                Flexible(
+                                  child: Container(
+                                    height: double.infinity,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Container(
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 1 * fem),
+                                            child: Flexible(
+                                              child: Text(
+                                                (currentWeather?['main']
+                                                            ['temp'] ??
+                                                        'Loading...')
+                                                    .toString(),
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontSize: 18 * ffem,
+                                                  fontWeight: FontWeight.w400,
+                                                  height:
+                                                      1.2660000059 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Flexible(
-                                        child: Text(
-                                          'min',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        Flexible(
+                                          child: Text(
+                                            'current',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                                 SizedBox(
-                                  width: 116.5 * fem,
+                                  width: 50 * fem,
                                 ),
-                                Container(
-                                  height: double.infinity,
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Flexible(
-                                        child: Container(
-                                          margin: EdgeInsets.fromLTRB(0 * fem,
-                                              0 * fem, 0 * fem, 6 * fem),
-                                          child: Flexible(
-                                            child: Text(
-                                              '19',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontSize: 18 * ffem,
-                                                fontWeight: FontWeight.w400,
-                                                height:
-                                                    1.2660000059 * ffem / fem,
-                                                color: Color(0xffffffff),
+                                Flexible(
+                                  child: Container(
+                                    height: double.infinity,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Container(
+                                            margin: EdgeInsets.fromLTRB(0 * fem,
+                                                0 * fem, 0 * fem, 1 * fem),
+                                            child: Flexible(
+                                              child: Text(
+                                                (currentWeather?['main']
+                                                            ['temp_max'] ??
+                                                        'Loading...')
+                                                    .toString(),
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  fontSize: 18 * ffem,
+                                                  fontWeight: FontWeight.w400,
+                                                  height:
+                                                      1.2660000059 * ffem / fem,
+                                                  color: Color(0xffffffff),
+                                                ),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ),
-                                      Flexible(
-                                        child: Text(
-                                          'min',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        Flexible(
+                                          child: Text(
+                                            'max',
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
