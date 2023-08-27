@@ -200,29 +200,35 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        // 4uF (711:27)
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 0 * fem, 6 * fem),
-                                        child: Text(
-                                          '19',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Container(
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 0 * fem, 6 * fem),
+                                          child: Flexible(
+                                            child: Text(
+                                              '19',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 18 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height:
+                                                    1.2660000059 * ffem / fem,
+                                                color: Color(0xffffffff),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'min',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 18 * ffem,
-                                          fontWeight: FontWeight.w300,
-                                          height: 1.2660000059 * ffem / fem,
-                                          color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Text(
+                                          'min',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18 * ffem,
+                                            fontWeight: FontWeight.w300,
+                                            height: 1.2660000059 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -237,28 +243,35 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 0 * fem, 6 * fem),
-                                        child: Text(
-                                          '19',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Container(
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 0 * fem, 6 * fem),
+                                          child: Flexible(
+                                            child: Text(
+                                              '19',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 18 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height:
+                                                    1.2660000059 * ffem / fem,
+                                                color: Color(0xffffffff),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'min',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 18 * ffem,
-                                          fontWeight: FontWeight.w300,
-                                          height: 1.2660000059 * ffem / fem,
-                                          color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Text(
+                                          'min',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18 * ffem,
+                                            fontWeight: FontWeight.w300,
+                                            height: 1.2660000059 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
                                         ),
                                       ),
                                     ],
@@ -273,28 +286,35 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            0 * fem, 0 * fem, 0 * fem, 6 * fem),
-                                        child: Text(
-                                          '19',
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w400,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Container(
+                                          margin: EdgeInsets.fromLTRB(0 * fem,
+                                              0 * fem, 0 * fem, 6 * fem),
+                                          child: Flexible(
+                                            child: Text(
+                                              '19',
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                fontSize: 18 * ffem,
+                                                fontWeight: FontWeight.w400,
+                                                height:
+                                                    1.2660000059 * ffem / fem,
+                                                color: Color(0xffffffff),
+                                              ),
+                                            ),
                                           ),
                                         ),
                                       ),
-                                      Text(
-                                        'min',
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          fontSize: 18 * ffem,
-                                          fontWeight: FontWeight.w300,
-                                          height: 1.2660000059 * ffem / fem,
-                                          color: Color(0xffffffff),
+                                      Flexible(
+                                        child: Text(
+                                          'min',
+                                          textAlign: TextAlign.center,
+                                          style: TextStyle(
+                                            fontSize: 18 * ffem,
+                                            fontWeight: FontWeight.w300,
+                                            height: 1.2660000059 * ffem / fem,
+                                            color: Color(0xffffffff),
+                                          ),
                                         ),
                                       ),
                                     ],
