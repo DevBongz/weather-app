@@ -1547,36 +1547,42 @@ class _HomePageState extends State<HomePage> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Text(
-                                          data['day'],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        Flexible(
+                                          child: Text(
+                                            data['day'],
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(width: 70),
-                                        Text(
-                                          data['description'],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        SizedBox(width: 30),
+                                        Flexible(
+                                          child: Text(
+                                            data['description'],
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
-                                        SizedBox(width: 70),
-                                        Text(
-                                          data['tempMax'],
-                                          textAlign: TextAlign.center,
-                                          style: TextStyle(
-                                            fontSize: 18 * ffem,
-                                            fontWeight: FontWeight.w300,
-                                            height: 1.2660000059 * ffem / fem,
-                                            color: Color(0xffffffff),
+                                        SizedBox(width: 30),
+                                        Flexible(
+                                          child: Text(
+                                            data['tempMax'],
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                              fontSize: 18 * ffem,
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.2660000059 * ffem / fem,
+                                              color: Color(0xffffffff),
+                                            ),
                                           ),
                                         ),
                                       ],
