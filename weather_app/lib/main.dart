@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
 
   _loadWeather() async {
     try {
-      Map<String, dynamic>? fetchData = await fetchWeatherData(33.81, 18.49);
+      Map<String, dynamic>? fetchData = await fetchWeatherData(-33.79, 18.52);
       setState(() {
         currentWeather = fetchData;
       });
@@ -1214,15 +1214,31 @@ class _HomePageState extends State<HomePage> {
       String dateText = forecast['dt_txt'];
       if (dateText.endsWith('15:00:00')) {
         DateTime date = DateTime.parse(dateText);
-        String dayOfWeek = date.weekday.toString();
+
+        List<String> daysOfWeek = [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday'
+        ];
+
+        String dayOfWeek = daysOfWeek[date.weekday - 1];
+
+        // String dayOfWeek = date.weekday.toString();
         String weatherDescription = forecast['weather'][0]['description'];
         double tempMax = forecast['main']['temp_max'] -
             273.15; // Convert from Kelvin to Celsius
+
         forecastData.add({
           'day': dayOfWeek,
           'description': weatherDescription,
           'tempMax': tempMax.toStringAsFixed(1) + "°C"
         });
+
+        print(forecastData);
       }
     }
   }
@@ -1559,7 +1575,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 30),
+                                        SizedBox(width: 20),
                                         Flexible(
                                           child: Text(
                                             data['description'],
@@ -1572,7 +1588,7 @@ class _HomePageState extends State<HomePage> {
                                             ),
                                           ),
                                         ),
-                                        SizedBox(width: 30),
+                                        SizedBox(width: 20),
                                         Flexible(
                                           child: Text(
                                             data['tempMax'],
