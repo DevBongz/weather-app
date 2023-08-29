@@ -2,6 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:location/location.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,6 +38,11 @@ class _HomePageState extends State<HomePage> {
   Map<String, dynamic>? currentWeather;
   List<Map<String, dynamic>> forecastData = [];
 
+  Location location = new Location();
+  late bool _serviceEnabled;
+  late PermissionStatus _permissionGranted;
+  late LocationData _locationData;
+
   static const String apiKey = "962fe95f870ebae67169f725a80ffd61";
 
   Future<Map<String, dynamic>> fetchWeatherData(double lat, double lon) async {
@@ -63,15 +69,34 @@ class _HomePageState extends State<HomePage> {
 
   _loadWeather() async {
     try {
-      Map<String, dynamic>? fetchData = await fetchWeatherData(-33.79, 18.52);
+      _serviceEnabled = await location.serviceEnabled();
+      if (!_serviceEnabled) {
+        _serviceEnabled = await location.requestService();
+        if (!_serviceEnabled) {
+          return;
+        }
+      }
+
+      _permissionGranted = await location.hasPermission();
+      if (_permissionGranted == PermissionStatus.denied) {
+        _permissionGranted = await location.requestPermission();
+        if (_permissionGranted != PermissionStatus.granted) {
+          return; // If permission is still not granted, return.
+        }
+      }
+
+      _locationData = await location.getLocation();
+
+      Map<String, dynamic>? fetchData = await fetchWeatherData(
+          _locationData.latitude!, _locationData.longitude!);
       setState(() {
         currentWeather = fetchData;
       });
-      print(currentWeather);
+      print(" Current Weather: " + currentWeather.toString());
 
       // Fetching forecast data
-      Map<String, dynamic> fetchedForecastData =
-          await fetchForecastData(-33.79, 18.52);
+      Map<String, dynamic> fetchedForecastData = await fetchForecastData(
+          _locationData.latitude!, _locationData.longitude!);
 
       var forecastList = fetchedForecastData['list'] as List;
 
@@ -101,7 +126,7 @@ class _HomePageState extends State<HomePage> {
             'tempMax': tempMax.toStringAsFixed(1) + "°C"
           });
 
-          print(forecastData);
+          print("forecastData: " + forecastData.toString());
         }
       }
 
@@ -126,15 +151,15 @@ class _HomePageState extends State<HomePage> {
     double ffem = fem * 0.97;
 
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Weather App'),
+        ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.amber,
           onPressed: () {
             _loadWeather();
           },
           child: const Icon(Icons.refresh),
-        ),
-        appBar: AppBar(
-          title: Text('Weather App'),
         ),
         body: SingleChildScrollView(
           child: Container(
@@ -149,6 +174,7 @@ class _HomePageState extends State<HomePage> {
               child: Stack(
                 children: [
                   if (currentWeather != null)
+                    //background image
                     Positioned(
                       left: 0 * fem,
                       top: 0 * fem,
@@ -163,6 +189,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
+                  //Today's weather
                   Positioned(
                     left: 111 * fem,
                     top: 84 * fem,
@@ -210,6 +237,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
+                  //Data Table
                   Positioned(
                     left: 0 * fem,
                     top: 372 * fem,
@@ -229,11 +257,13 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
+                            //today's forecast
                             Container(
+                              // color: Colors.amber,
                               margin: EdgeInsets.fromLTRB(
-                                  39 * fem, 0 * fem, 41 * fem, 32 * fem),
+                                  39 * fem, 0 * fem, 41 * fem, 5 * fem),
                               width: double.infinity,
-                              height: 5 * fem,
+                              height: 80 * fem,
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment:
@@ -404,6 +434,7 @@ class _HomePageState extends State<HomePage> {
                                 ],
                               ),
                             ),
+                            //Divider line
                             Container(
                               margin: EdgeInsets.fromLTRB(
                                   0 * fem, 0 * fem, 0 * fem, 33 * fem),
@@ -413,6 +444,7 @@ class _HomePageState extends State<HomePage> {
                                 color: Color(0xffffffff),
                               ),
                             ),
+                            //5day forecast data table
                             Container(
                                 margin: EdgeInsets.fromLTRB(
                                     31 * fem, 0 * fem, 42 * fem, 0 * fem),
